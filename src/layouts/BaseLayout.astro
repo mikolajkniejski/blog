@@ -1,0 +1,73 @@
+---
+interface Props {
+  description: string;
+}
+
+const { description } = Astro.props;
+
+import Nav from "../components/Navbar.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <Nav />
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>
+<style>
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  body {
+    margin: 0;
+    line-height: 1.5;
+    background-color: #2e2f2f1d;
+    background-image: url("../s3.jpg");
+    background-size: 400px;
+    background-blend-mode: darken;
+    font-family: "Lato", sans-serif;
+  }
+  main {
+    filter: drop-shadow(6px 6px 0px #051014);
+    width: 100%;
+    max-width: 48rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .container {
+    border: 6px solid #cddddd;
+    border-radius: 7px;
+    color: rgb(17, 17, 17);
+    background-color: #a599b5;
+    padding: 1rem;
+  }
+</style>
